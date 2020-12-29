@@ -1,0 +1,23 @@
+modLoader="kotlinforforge"
+loaderVersion="[1,)"
+license="GNU GPLv3"
+[[mods]]
+modId="chickensmoult"
+version="${file.jarVersion}"
+displayName="ChickensMoult"
+authors="holmraven"
+description='''
+Chickens moult occasionally.
+'''
+[[dependencies.chickensmoult]]
+    modId="forge"
+    mandatory=true
+    versionRange="[35,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.chickensmoult]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.4]"
+    ordering="NONE"
+    side="BOTH"
