@@ -15,8 +15,8 @@ apply plugin: 'maven-publish'
 apply plugin: 'kotlin'
 
 version = '1.0'
-group = 'com.holmraven.chickensmoult'
-archivesBaseName = 'chickensmoult'
+group = 'com.holmraven.chickensshed'
+archivesBaseName = 'chickensshed'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
