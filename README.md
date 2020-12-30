@@ -1,2 +1,2 @@
 # ChickensMoult
-Mod on Kotlin that makes chickens moult/shed their feathers!
+Mod on Kotlin that makes chickens shed their feathers!
