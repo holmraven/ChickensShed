@@ -1,4 +1,4 @@
-package com.holmraven.chickensmoult
+package com.holmraven.chickensshed
 
 import net.minecraftforge.fml.common.Mod
 import thedarkcolour.kotlinforforge.forge.FORGE_BUS
@@ -8,9 +8,9 @@ import net.minecraftforge.event.entity.living.LivingEvent
 import net.minecraft.entity.passive.ChickenEntity
 import net.minecraft.item.Items
 
-@Mod(ChickensMoult.ID)
-object ChickensMoult {
-    const val ID: String = "chickensmoult"
+@Mod(ChickensShed.ID)
+object ChickensShed {
+    const val ID: String = "chickensshed"
 
     init {
         FORGE_BUS.register(this)

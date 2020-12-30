@@ -2,20 +2,20 @@ modLoader="kotlinforforge"
 loaderVersion="[1,)"
 license="GNU GPLv3"
 [[mods]]
-modId="chickensmoult"
+modId="chickensshed"
 version="${file.jarVersion}"
-displayName="ChickensMoult"
+displayName="ChickensShed"
 authors="holmraven"
 description='''
-Chickens moult occasionally.
+Chickens shed their feathers occasionally.
 '''
-[[dependencies.chickensmoult]]
+[[dependencies.chickensshed]]
     modId="forge"
     mandatory=true
     versionRange="[35,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.chickensmoult]]
+[[dependencies.chickensshed]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.16.4]"
