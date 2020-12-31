@@ -19,11 +19,8 @@ object ChickensShed {
 
     @SubscribeEvent
     fun onLivingUpdate(event: LivingEvent.LivingUpdateEvent) {
-        val entity = event.entityLiving
-        if (entity is ChickenEntity) {
-            if (entity.world.rand.nextInt(26000) == 0) {
-                entity.entityDropItem(Items.FEATHER, 1)
-            }
-        }
+        if (event.entity.world.isRemote || event.entity !is ChickenEntity) return
+        val chicken: ChickenEntity = event.entity as ChickenEntity
+        if (chicken.world.rand.nextInt(26000) == 0) chicken.entityDropItem(Items.FEATHER, 1)
     }
 }
