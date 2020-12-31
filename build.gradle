@@ -16,7 +16,7 @@ apply plugin: 'kotlin'
 
 version = '1.16.4-1.1'
 group = 'com.holmraven.chickensshed'
-archivesBaseName = 'ChickensShed'
+archivesBaseName = 'chickensshed'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 
