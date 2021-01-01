@@ -1,14 +1,12 @@
 modLoader="kotlinforforge"
 loaderVersion="[1,)"
-license="GNU GPLv3"
+license="GNU LGPLv3"
 [[mods]]
 modId="chickensshed"
 version="${file.jarVersion}"
 displayName="ChickensShed"
 authors="holmraven"
-description='''
-Chickens shed their feathers occasionally.
-'''
+description="Chickens shed their feathers occasionally."
 [[dependencies.chickensshed]]
     modId="forge"
     mandatory=true
