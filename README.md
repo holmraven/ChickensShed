@@ -3,4 +3,6 @@
 
 # ChickensShed
 
-Mod that makes chickens shed their feathers occasionally.
+ChickensShed is Minecraft mod that makes chickens shed their feathers occasionally.
+
+Releases are downloadable on [CurseForge](https://www.curseforge.com/minecraft/mc-mods/chickensshed)
