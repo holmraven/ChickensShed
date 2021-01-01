@@ -6,7 +6,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
-		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.21"
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_release}"
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -14,7 +14,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 apply plugin: 'kotlin'
 
-version = '1.16.4-1.1'
+version = "${minecraft_version}-${mod_version}"
 group = 'com.holmraven.chickensshed'
 archivesBaseName = 'chickensshed'
 
@@ -22,7 +22,7 @@ sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = co
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'snapshot', version: '20201028-1.16.3'
+    mappings channel: 'snapshot', version: "${mappings_version}"
     runs {
         client {
             workingDirectory project.file('run')
@@ -32,7 +32,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                chickensshed {
                     source sourceSets.main
                 }
             }
@@ -46,7 +46,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             mods {
-                examplemod {
+                chickensshed {
                     source sourceSets.main
                 }
             }
@@ -59,18 +59,16 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'chickensshed', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                examplemod {
+                chickensshed {
                     source sourceSets.main
                 }
             }
         }
     }
 }
-
-sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven {
@@ -79,9 +77,11 @@ repositories {
     }
 }
 
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.16.4-35.1.28'
-	implementation 'thedarkcolour:kotlinforforge:1.7.0'
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+	implementation "thedarkcolour:kotlinforforge:${kotlinforforge_version}"
 }
 
 compileKotlin {
@@ -93,12 +93,12 @@ compileKotlin {
 jar {
     manifest {
         attributes([
-            "Specification-Title": "examplemod",
-            "Specification-Vendor": "examplemodsareus",
+            "Specification-Title": "chickensshed",
+            "Specification-Vendor": "holmraven",
             "Specification-Version": "1",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
-            "Implementation-Vendor" :"examplemodsareus",
+            "Implementation-Vendor" :"holmraven",
             "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
