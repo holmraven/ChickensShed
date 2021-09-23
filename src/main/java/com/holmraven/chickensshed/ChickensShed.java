@@ -23,15 +23,9 @@ public class ChickensShed {
     @SubscribeEvent
     public void onLivingUpdate(final LivingEvent.LivingUpdateEvent event) {
         final LivingEntity entity = event.getEntityLiving();
-        if (entity.world.isRemote || !(entity instanceof ChickenEntity)) {
-            return;
-        }
-        if (entity.isChild() && !ConfigHandler.chicksDropFeathers){
-            return;
-        }
+        if (entity.world.isRemote || !(entity instanceof ChickenEntity)) { return; }
+        if (entity.isChild() && !ConfigHandler.chicksDropFeathers) { return; }
         final ChickenEntity chicken = (ChickenEntity) entity;
-        if (chicken.world.rand.nextInt(ConfigHandler.dropFrequency) == 0) {
-            chicken.entityDropItem(Items.FEATHER, 1);
-        }
+        if (chicken.world.rand.nextInt(ConfigHandler.dropFrequency) == 0) { chicken.entityDropItem(Items.FEATHER, 1); }
     }
 }
