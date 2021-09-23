@@ -1,18 +1,18 @@
-modLoader="kotlinforforge"
-loaderVersion="[1,)"
+modLoader="javafml"
+loaderVersion="[31,)"
 [[mods]]
 modId="chickensshed"
 version="${file.jarVersion}"
 displayName="ChickensShed"
 authors="holmraven"
 description="Chickens shed their feathers occasionally."
-[[dependencies.chickensshed]]
+[[dependencies.examplemod]]
     modId="forge"
     mandatory=true
     versionRange="[31,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.chickensshed]]
+[[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"
