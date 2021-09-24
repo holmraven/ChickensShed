@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[36,)"
+loaderVersion="[37,)"
 license="GNU LGPLv3"
 [[mods]]
 modId="chickensshed"
@@ -7,15 +7,15 @@ version="${file.jarVersion}"
 displayName="ChickensShed"
 authors="holmraven"
 description="Chickens shed their feathers occasionally."
-[[dependencies.chickensshed]]
+[[dependencies.examplemod]]
     modId="forge"
     mandatory=true
-    versionRange="[36,)"
+    versionRange="[37,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.chickensshed]]
+[[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.16.5,1.17)"
+    versionRange="[1.17.1,1.18)"
     ordering="NONE"
     side="BOTH"

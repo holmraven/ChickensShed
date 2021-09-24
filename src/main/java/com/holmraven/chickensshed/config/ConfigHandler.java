@@ -4,7 +4,7 @@ import com.holmraven.chickensshed.ChickensShed;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.event.config.ModConfigEvent;
 import org.apache.commons.lang3.tuple.Pair;
 
 @Mod.EventBusSubscriber(modid = ChickensShed.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -21,7 +21,7 @@ public class ConfigHandler {
     public static int dropFrequency;
 
     @SubscribeEvent
-    public static void onModConfigEvent(final ModConfig.ModConfigEvent configEvent) {
+    public static void onModConfigEvent(final ModConfigEvent configEvent) {
         if(configEvent.getConfig().getSpec() == ConfigHandler.CLIENT_SPEC) {
             bakeConfig();
         }
