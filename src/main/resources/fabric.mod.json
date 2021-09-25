@@ -7,16 +7,13 @@
   "authors": [
     "holmraven"
   ],
-  "contributors": [],
-  "contact": {},
+  "contact": { },
   "license": "LGPL-3.0",
   "environment": "*",
   "entrypoints": {
     "main": [
       "com.holmraven.chickensshed.ChickensShed"
-    ],
-    "client": [],
-    "server": []
+    ]
   },
   "mixins": [
     "chickensshed.mixins.json"
@@ -24,6 +21,10 @@
   "depends": {
     "fabricloader": ">=0.11.7",
     "fabric": "*",
-    "minecraft": "1.16.x"
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }

@@ -1,12 +1,12 @@
 {
   "required": true,
+  "minVersion": "0.8",
   "package": "com.holmraven.chickensshed.mixin",
-  "compatibilityLevel": "JAVA_8",
+  "compatibilityLevel": "JAVA_16",
   "mixins": [
     "ChickensShedMixin"
   ],
   "client": [],
-  "server": [],
   "injectors": {
     "defaultRequire": 1
   }
