@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "chickensshed",
+  "version": "${version}",
+  "name": "ChickensShed",
+  "description": "Chickens shed their feathers occasionally.",
+  "authors": [
+    "holmraven"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "LGPL-3.0",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.holmraven.chickensshed.ChickensShed"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "chickensshed.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.7",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}

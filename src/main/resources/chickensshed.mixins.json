@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.holmraven.chickensshed.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ChickensShedMixin"
+  ],
+  "client": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
