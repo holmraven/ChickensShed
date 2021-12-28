@@ -1,17 +1,18 @@
 package com.holmraven.chickensshed;
 
+import com.holmraven.chickensshed.client.GUIConfigHandler;
 import com.holmraven.chickensshed.config.ConfigHandler;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.item.Items;
-import net.minecraftforge.client.ConfigGuiHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(ChickensShed.MODID)
 public class ChickensShed {
@@ -20,14 +21,18 @@ public class ChickensShed {
     public static ConfigHandler CONFIG = new ConfigHandler();
 
     public ChickensShed(){
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::preInitClient);
         AutoConfig.register(ConfigHandler.class, JanksonConfigSerializer::new);
         CONFIG = AutoConfig.getConfigHolder(ConfigHandler.class).getConfig();
-        ModLoadingContext.get().registerExtensionPoint(ConfigGuiHandler.ConfigGuiFactory.class, () -> new ConfigGuiHandler.ConfigGuiFactory((client, parent) -> AutoConfig.getConfigScreen(ConfigHandler.class, parent).get()));
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+    private void preInitClient(final FMLClientSetupEvent event){
+        GUIConfigHandler.init();
+    }
+
     @SubscribeEvent
-    public void onLivingUpdate(final LivingEvent.LivingUpdateEvent event) {
+    public void onLivingUpdate(final LivingEvent.LivingUpdateEvent event){
         final LivingEntity entity = event.getEntityLiving();
         if (entity.level.isClientSide || !(entity instanceof Chicken)) { return; }
         if (entity.isBaby() && !CONFIG.chicksDropFeathers) { return; }
