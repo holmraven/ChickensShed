@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[39,)"
+loaderVersion="[41,)"
 license="GNU LGPLv3"
 [[mods]]
 modId="chickensshed"
@@ -12,18 +12,18 @@ description="Chickens shed their feathers occasionally."
 [[dependencies.chickensshed]]
     modId="forge"
     mandatory=true
-    versionRange="[39,)"
+    versionRange="[41,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.chickensshed]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.18.1,1.19)"
+    versionRange="[1.19,1.20)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.chickensshed]]
 modId = "cloth_config"
 mandatory = true
-versionRange = "[6,)"
+versionRange = "[7,)"
 ordering = "NONE"
 side = "BOTH"
