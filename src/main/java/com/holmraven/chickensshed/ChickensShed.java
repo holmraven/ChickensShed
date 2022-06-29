@@ -16,7 +16,7 @@ public class ChickensShed {
     public static final String MODID = "chickensshed";
 
     public ChickensShed(){
-        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConfigHandler.COMMON_SPEC);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -24,8 +24,8 @@ public class ChickensShed {
     public void onLivingUpdate(final LivingEvent.LivingUpdateEvent event) {
         final LivingEntity entity = event.getEntityLiving();
         if (entity.level.isClientSide || !(entity instanceof Chicken)) { return; }
-        if (entity.isBaby() && !ConfigHandler.chicksDropFeathers) { return; }
+        if (entity.isBaby() && !ConfigHandler.COMMON.chicksDropFeathers.get()) { return; }
         final Chicken chicken = (Chicken) entity;
-        if (chicken.level.random.nextInt(ConfigHandler.dropFrequency) == 0) { chicken.spawnAtLocation(Items.FEATHER, 1); }
+        if (chicken.level.random.nextInt(ConfigHandler.COMMON.dropFrequency.get()) == 0) { chicken.spawnAtLocation(Items.FEATHER, 1); }
     }
 }
