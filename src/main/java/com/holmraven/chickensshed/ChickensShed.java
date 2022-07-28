@@ -32,8 +32,8 @@ public class ChickensShed {
     }
 
     @SubscribeEvent
-    public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
-        LivingEntity entity = event.getEntityLiving();
+    public void onLivingUpdate(LivingEvent.LivingTickEvent event) {
+        LivingEntity entity = event.getEntity();
         if (!entity.level.isClientSide && entity instanceof Chicken chicken) {
             if (chicken.isBaby() && !CONFIG.chicksDropFeathers) {
                 return;
