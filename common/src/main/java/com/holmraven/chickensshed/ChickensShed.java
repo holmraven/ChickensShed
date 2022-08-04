@@ -2,12 +2,9 @@ package com.holmraven.chickensshed;
 
 import com.holmraven.chickensshed.config.ConfigHandler;
 import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.gameevent.GameEvent;
 
 public class ChickensShed {
     public static final String MODID = "chickensshed";
@@ -15,7 +12,6 @@ public class ChickensShed {
 
     public static void initConfig()
     {
-        AutoConfig.register(ConfigHandler.class, Toml4jConfigSerializer::new);
         ChickensShed.CONFIG = AutoConfig.getConfigHolder(ConfigHandler.class).getConfig();
     }
 
