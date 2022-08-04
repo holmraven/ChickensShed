@@ -10,7 +10,6 @@ import net.minecraftforge.fml.ModLoadingContext;
 
 @OnlyIn(Dist.CLIENT)
 public class ScreenConfigHandler {
-
     public static void init(){
         ModLoadingContext.get().registerExtensionPoint(ConfigScreenHandler.ConfigScreenFactory.class, () -> new ConfigScreenHandler.ConfigScreenFactory((client, parent) -> AutoConfig.getConfigScreen(ConfigHandler.class, parent).get()));
         MinecraftForge.EVENT_BUS.register(new ScreenConfigHandler());
