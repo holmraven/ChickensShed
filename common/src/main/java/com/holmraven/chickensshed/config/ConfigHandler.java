@@ -7,10 +7,10 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 
 @Config(name = ChickensShed.MODID)
-public class ConfigHandler implements ConfigData{
+public class ConfigHandler implements ConfigData {
     @Comment("Do baby chickens drop feathers?")
     public boolean chicksDropFeathers = true;
-    @Comment("How often will feathers be shed? (min: 6000)")
+    @Comment("How often will feathers be shed? (min: 6000, less is more often)")
     @ConfigEntry.BoundedDiscrete(min = 6000, max = Integer.MAX_VALUE)
     public int dropFrequency = 26000;
 }
