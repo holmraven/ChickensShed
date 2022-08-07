@@ -1,7 +1,7 @@
 package com.holmraven.chickensshed.mixin;
 
 import com.holmraven.chickensshed.ChickensShed;
-import net.mehvahdjukaar.supplementaries.common.capabilities.mob_container.DefaultCatchableMobCap;
+import net.mehvahdjukaar.supplementaries.common.capabilities.mobholder.DefaultCatchableMobCap;
 import net.minecraft.world.entity.animal.Chicken;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -25,9 +25,6 @@ dependencies {
 
     modApi "com.terraformersmc:modmenu:${rootProject.mod_menu_version}"
 
-    //modRuntimeOnly "curse.maven:supplementaries-412082:${rootProject.supplementaries_fabric_version}"
-    //modRuntimeOnly "curse.maven:selene-499980:${rootProject.selene_fabric_version}"
-
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
 }

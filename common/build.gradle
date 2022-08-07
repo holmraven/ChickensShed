@@ -9,5 +9,5 @@ dependencies {
         exclude module: 'fabric-api'
     }
 
-    modApi "curse.maven:supplementaries-412082:${rootProject.supplementaries_fabric_version}"
+    modApi "curse.maven:supplementaries-412082:${rootProject.supplementaries_version}"
 }
