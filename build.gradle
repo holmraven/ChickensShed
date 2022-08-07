@@ -26,17 +26,14 @@ subprojects {
 allprojects {
     apply plugin: "java"
     apply plugin: "architectury-plugin"
-    apply plugin: "maven-publish"
 
     archivesBaseName = rootProject.archives_base_name
     version = rootProject.mod_version
     group = rootProject.maven_group
 
     repositories {
-        maven { url "https://maven.shedaniel.me/" }
-        maven { url "https://maven.terraformersmc.com/" }
         maven {
-            url "https://www.cursemaven.com/"
+            url "https://cursemaven.com"
             content {
                 includeGroup "curse.maven"
             }

@@ -1,3 +1,11 @@
+configurations {
+    common
+    shadowCommon
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentForge.extendsFrom common
+}
+
 architectury {
     platformSetupLoomIde()
     forge()
@@ -9,17 +17,13 @@ loom {
     }
 }
 
-configurations {
-    common
-    shadowCommon
-    compileClasspath.extendsFrom common
-    runtimeClasspath.extendsFrom common
-    developmentForge.extendsFrom common
-}
-
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}"
+
     modImplementation "me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}"
+
+    //modRuntimeOnly "curse.maven:supplementaries-412082:${rootProject.supplementaries_version}"
+    //modRuntimeOnly "curse.maven:selene-499980:${rootProject.selene_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -35,15 +39,14 @@ processResources {
 
 shadowJar {
     exclude "fabric.mod.json"
-    exclude "architectury.common.json"
 
     configurations = [project.configurations.shadowCommon]
     classifier "dev-shadow"
 }
 
 remapJar {
-    input.set shadowJar.archiveFile
-    dependsOn shadowJar
+    inputFile.set(shadowJar.archiveFile)
+    dependsOn(shadowJar)
     classifier null
 }
 
@@ -60,14 +63,5 @@ sourcesJar {
 components.java {
     withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
         skip()
-    }
-}
-
-publishing {
-    publications {
-        mavenForge(MavenPublication) {
-            artifactId = rootProject.archives_base_name + "-" + project.name
-            from components.java
-        }
     }
 }
