@@ -20,7 +20,7 @@
       "com.holmraven.chickensshed.fabric.ChickensShedFabric"
     ],
     "modmenu": [
-      "com.holmraven.chickensshed.fabric.client.ModMenuIntegration"
+      "com.holmraven.chickensshed.client.ModMenuIntegration"
     ]
   },
   "mixins": [

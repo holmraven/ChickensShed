@@ -1,4 +1,4 @@
-package com.holmraven.chickensshed.fabric.client;
+package com.holmraven.chickensshed.client;
 
 import com.holmraven.chickensshed.config.ConfigHandler;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;

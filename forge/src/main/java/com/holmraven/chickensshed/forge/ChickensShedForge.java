@@ -2,7 +2,7 @@ package com.holmraven.chickensshed.forge;
 
 import com.holmraven.chickensshed.ChickensShed;
 import com.holmraven.chickensshed.config.ConfigHandler;
-import com.holmraven.chickensshed.forge.client.ScreenConfigHandler;
+import com.holmraven.chickensshed.client.ScreenConfigHandler;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,7 +19,7 @@ public class ChickensShedForge {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void onClientSetup(final FMLClientSetupEvent event){
+    private void onClientSetup(FMLClientSetupEvent event){
         ScreenConfigHandler.init();
     }
 }
