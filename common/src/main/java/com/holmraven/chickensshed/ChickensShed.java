@@ -2,8 +2,7 @@ package com.holmraven.chickensshed;
 
 import com.holmraven.chickensshed.config.ConfigHandler;
 import me.shedaniel.autoconfig.AutoConfig;
-import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Chicken;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Items;
 
 public class ChickensShed {
@@ -15,13 +14,12 @@ public class ChickensShed {
         ChickensShed.CONFIG = AutoConfig.getConfigHolder(ConfigHandler.class).getConfig();
     }
 
-    public static void performShedding(Animal animal) {
-        Chicken chicken = (Chicken) animal;
-        if (chicken.isBaby() && !CONFIG.chicksDropFeathers) {
+    public static void performShedding(LivingEntity e) {
+        if (e.isBaby() && !CONFIG.chicksDropFeathers) {
             return;
         }
-        if (!chicken.level.isClientSide && chicken.isAlive() && !chicken.isChickenJockey() && chicken.level.random.nextInt(CONFIG.dropFrequency) == 0) {
-            chicken.spawnAtLocation(Items.FEATHER);
+        if (!e.level.isClientSide && e.level.random.nextInt(CONFIG.dropFrequency) == 0) {
+            e.spawnAtLocation(Items.FEATHER);
         }
     }
 }
