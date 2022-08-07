@@ -1,0 +1,7 @@
+{
+  "text.autoconfig.chickensshed.title": "ChickensShed",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers": "Chicks Drop Feathers",
+  "text.autoconfig.chickensshed.option.dropFrequency": "Drop Frequency",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers.@Tooltip": "Do baby chickens drop feathers?",
+  "text.autoconfig.chickensshed.option.dropFrequency.@Tooltip": "How often will feathers be shed? (min: 6000, less is more often)"
+}

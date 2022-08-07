@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.holmraven.chickensshed.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "plugin": "com.holmraven.chickensshed.integration.CompatMixinPlugin",
+  "mixins": [
+    "ChickenMixin",
+    "ChickenAnimMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

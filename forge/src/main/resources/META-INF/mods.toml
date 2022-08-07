@@ -1,0 +1,32 @@
+modLoader="javafml"
+loaderVersion="[41,)"
+license="GNU LGPLv3"
+issueTrackerURL="https://github.com/holmraven/ChickensShed/issues"
+
+[[mods]]
+  modId="chickensshed"
+  version="${version}"
+  displayName="ChickensShed"
+  displayURL="https://www.curseforge.com/minecraft/mc-mods/chickensshed"
+  logoFile="logo.png"
+  authors="holmraven"
+  description="Chickens shed their feathers occasionally."
+
+  [[dependencies.chickensshed]]
+    modId="forge"
+    mandatory=true
+    versionRange="[41,)"
+    ordering="NONE"
+    side="BOTH"
+  [[dependencies.chickensshed]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19,1.20)"
+    ordering="NONE"
+    side="BOTH"
+  [[dependencies.chickensshed]]
+    modId = "cloth_config"
+    mandatory = true
+    versionRange = "[8,)"
+    ordering = "NONE"
+    side = "BOTH"

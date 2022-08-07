@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "chickensshed",
+  "version": "${version}",
+  "name": "ChickensShed",
+  "description": "Chickens shed their feathers occasionally.",
+  "authors": [
+    "holmraven"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/chickensshed",
+    "sources": "https://github.com/holmraven/ChickensShed",
+    "issues": "https://github.com/holmraven/ChickensShed/issues"
+  },
+  "license": "LGPL-3.0",
+  "icon": "logo.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.holmraven.chickensshed.fabric.ChickensShedFabric"
+    ],
+    "modmenu": [
+      "com.holmraven.chickensshed.client.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "chickensshed.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.8",
+    "minecraft": "~1.19",
+    "java": ">=17",
+    "cloth-config2": ">=8.0.75"
+  }
+}
