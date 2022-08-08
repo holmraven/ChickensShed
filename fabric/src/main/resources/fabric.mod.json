@@ -24,7 +24,8 @@
     ]
   },
   "mixins": [
-    "chickensshed.mixins.json"
+    "chickensshed.mixins.json",
+    "chickensshed-common.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.14.8",

@@ -32,6 +32,7 @@ allprojects {
     group = rootProject.maven_group
 
     repositories {
+        mavenLocal()
         maven {
             url "https://cursemaven.com"
             content {

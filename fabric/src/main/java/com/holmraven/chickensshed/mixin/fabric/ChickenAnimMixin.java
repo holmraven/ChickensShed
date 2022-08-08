@@ -1,4 +1,4 @@
-package com.holmraven.chickensshed.mixin;
+package com.holmraven.chickensshed.mixin.fabric;
 
 import com.holmraven.chickensshed.ChickensShed;
 import net.mehvahdjukaar.supplementaries.common.capabilities.mob_container.DefaultCatchableMobCap;
@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(DefaultCatchableMobCap.ChickenAnim.class)
-public abstract class ChickenAnimMixin extends DefaultCatchableMobCap<Chicken>{
+public abstract class ChickenAnimMixin extends DefaultCatchableMobCap<Chicken> {
     protected ChickenAnimMixin(Chicken entity) {
         super(entity);
     }
