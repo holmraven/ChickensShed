@@ -4,7 +4,7 @@
   "package": "com.holmraven.chickensshed.mixin",
   "compatibilityLevel": "JAVA_17",
   "plugin": "com.holmraven.chickensshed.integration.CompatMixinPlugin",
-  "server": [
+  "mixins": [
     "ChickenMixin",
     "ChickenAnimMixin"
   ],
