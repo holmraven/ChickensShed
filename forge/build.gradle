@@ -1,3 +1,7 @@
+plugins {
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
 configurations {
     common
     shadowCommon
@@ -13,15 +17,15 @@ architectury {
 
 loom {
     forge {
-        mixinConfigs = [ "chickensshed.mixins.json", "chickensshed-common.mixins.json"]
+        mixinConfig "chickensshed.mixins.json"
     }
 }
 
 dependencies {
     forge("net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}")
     modApi("me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}")
-    modCompileOnly("curse.maven:supplementaries-412082:${rootProject.supplementaries_forge_version}")
-    //modRuntimeOnly("curse.maven:selene-499980:${rootProject.selene_forge_version}")
+    modLocalRuntime("curse.maven:supplementaries-412082:${rootProject.supplementaries_forge_version}")
+    modLocalRuntime("curse.maven:selene-499980:${rootProject.selene_forge_version}")
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }

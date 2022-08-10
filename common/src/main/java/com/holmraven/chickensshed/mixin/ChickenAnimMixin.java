@@ -1,4 +1,4 @@
-package com.holmraven.chickensshed.mixin.fabric;
+package com.holmraven.chickensshed.mixin;
 
 import com.holmraven.chickensshed.ChickensShed;
 import net.mehvahdjukaar.supplementaries.common.capabilities.mob_container.DefaultCatchableMobCap;

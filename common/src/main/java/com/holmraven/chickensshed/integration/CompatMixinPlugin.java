@@ -14,7 +14,7 @@ public final class CompatMixinPlugin implements IMixinConfigPlugin {
     private static final Supplier<Boolean> TRUE = () -> true;
 
     private static final Map<String, Supplier<Boolean>> CONDITIONS = ImmutableMap.of(
-            String.format("com.holmraven.chickensshed.mixin.%s.ChickenAnimMixin", CompatHandler.getPlatformString()), () -> CompatHandler.supplementaries
+            "com.holmraven.chickensshed.mixin.ChickenAnimMixin", () -> CompatHandler.supplementaries
     );
 
     @Override
@@ -23,7 +23,6 @@ public final class CompatMixinPlugin implements IMixinConfigPlugin {
     }
 
     // Boilerplate
-
     @Override
     public void onLoad(String mixinPackage) {
 

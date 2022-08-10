@@ -13,9 +13,4 @@ public class CompatHandler {
     public static boolean isModLoaded(String name) {
         throw new AssertionError();
     }
-
-    @ExpectPlatform
-    public static String getPlatformString() {
-        throw new AssertionError();
-    }
 }
