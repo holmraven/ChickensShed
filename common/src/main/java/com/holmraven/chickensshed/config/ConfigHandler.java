@@ -12,6 +12,6 @@ public class ConfigHandler implements ConfigData {
     public boolean chicksDropFeathers = true;
 
     @ConfigEntry.Gui.Tooltip
-    @ConfigEntry.BoundedDiscrete(min = 6000, max = Integer.MAX_VALUE)
+    @ConfigEntry.BoundedDiscrete(min = 6000, max = 108000)
     public int dropFrequency = 26000;
 }
