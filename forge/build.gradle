@@ -24,11 +24,9 @@ loom {
 dependencies {
     forge("net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}")
     modApi("me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}")
-    modLocalRuntime("curse.maven:supplementaries-412082:${rootProject.supplementaries_forge_version}")
-    modLocalRuntime("curse.maven:selene-499980:${rootProject.selene_forge_version}")
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive false }
 }
 
 processResources {

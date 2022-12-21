@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[41,)"
+loaderVersion="[43,)"
 license="GNU LGPLv3"
 issueTrackerURL="https://github.com/holmraven/ChickensShed/issues"
 
@@ -15,18 +15,18 @@ issueTrackerURL="https://github.com/holmraven/ChickensShed/issues"
   [[dependencies.chickensshed]]
     modId="forge"
     mandatory=true
-    versionRange="[41,)"
+    versionRange="[44,)"
     ordering="NONE"
     side="BOTH"
   [[dependencies.chickensshed]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.19,1.20)"
+    versionRange="[1.19.3,1.20)"
     ordering="NONE"
     side="BOTH"
   [[dependencies.chickensshed]]
     modId = "cloth_config"
     mandatory = true
-    versionRange = "[8,)"
+    versionRange = "[9,)"
     ordering = "NONE"
     side = "BOTH"
