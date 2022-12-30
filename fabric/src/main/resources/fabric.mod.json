@@ -27,9 +27,9 @@
     "chickensshed.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.12",
+    "fabricloader": ">=0.14.11",
     "minecraft": "~1.19",
     "java": ">=17",
-    "cloth-config2": ">=9.0.94"
+    "cloth-config2": ">=8.2.88"
   }
 }

@@ -1,4 +1,4 @@
-package com.holmraven.chickensshed.mixin;
+package com.holmraven.chickensshed.mixins;
 
 import com.holmraven.chickensshed.ChickensShed;
 import net.minecraft.world.entity.EntityType;

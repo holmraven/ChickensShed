@@ -18,7 +18,7 @@ public class ChickensShed {
         if (e.isBaby() && !CONFIG.chicksDropFeathers) {
             return;
         }
-        if (!e.level.isClientSide && e.level.random.nextInt(CONFIG.dropFrequency) == 0) {
+        if (!e.level.isClientSide && e.level.random.nextInt(CONFIG.dropChance) == 0) {
             e.spawnAtLocation(Items.FEATHER);
         }
     }

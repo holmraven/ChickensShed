@@ -13,5 +13,5 @@ public class ConfigHandler implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     @ConfigEntry.BoundedDiscrete(min = 6000, max = 108000)
-    public int dropFrequency = 26000;
+    public int dropChance = 26000;
 }
