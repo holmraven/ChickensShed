@@ -8,7 +8,7 @@ issueTrackerURL="https://github.com/holmraven/ChickensShed/issues"
   version="${version}"
   displayName="ChickensShed"
   displayURL="https://www.curseforge.com/minecraft/mc-mods/chickensshed"
-  logoFile="logo.png"
+  logoFile="icon.png"
   authors="holmraven"
   description="Chickens shed their feathers occasionally."
 
@@ -25,8 +25,8 @@ issueTrackerURL="https://github.com/holmraven/ChickensShed/issues"
     ordering="NONE"
     side="BOTH"
   [[dependencies.chickensshed]]
-    modId = "cloth_config"
-    mandatory = true
-    versionRange = "[8,)"
-    ordering = "NONE"
-    side = "BOTH"
+    modId="cloth_config"
+    mandatory=false
+    versionRange="[8,)"
+    ordering="NONE"
+    side="BOTH"

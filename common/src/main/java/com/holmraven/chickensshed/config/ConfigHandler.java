@@ -1,17 +1,32 @@
 package com.holmraven.chickensshed.config;
 
-import com.holmraven.chickensshed.ChickensShed;
-import me.shedaniel.autoconfig.ConfigData;
-import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry;
+import com.holmraven.chickensshed.integration.CompatHandler;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 
-@Config(name = ChickensShed.MODID)
-@Config.Gui.Background("minecraft:textures/block/white_wool.png")
-public class ConfigHandler implements ConfigData {
-    @ConfigEntry.Gui.Tooltip
-    public boolean chicksDropFeathers = true;
+public class ConfigHandler {
+    public static ClothConfig CONFIG;
 
-    @ConfigEntry.Gui.Tooltip
-    @ConfigEntry.BoundedDiscrete(min = 6000, max = 108000)
-    public int dropChance = 26000;
+    public static boolean chicksDropFeathersDefault = true;
+    public static int dropChanceDefault = 26000;
+
+    public static void initClothConfig()
+    {
+        AutoConfig.register(ClothConfig.class, JanksonConfigSerializer::new);
+        ConfigHandler.CONFIG = AutoConfig.getConfigHolder(ClothConfig.class).getConfig();
+    }
+
+    public static boolean chicksDropFeathers() {
+        if (CompatHandler.cloth_config) {
+            return CONFIG.chicksDropFeathers;
+        }
+        return chicksDropFeathersDefault;
+    }
+
+    public static int dropChance() {
+        if (CompatHandler.cloth_config) {
+            return CONFIG.dropChance;
+        }
+        return dropChanceDefault;
+    }
 }

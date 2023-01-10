@@ -1,0 +1,10 @@
+{
+  "text.autoconfig.chickensshed.title": "ChickensShed",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers": "Viščiukai meta plunksnas",
+  "text.autoconfig.chickensshed.option.dropChance": "Iškritimo tikimybė",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers.@Tooltip": "Ar viščiukams krenta plunksnos?",
+  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[0]": "Kaip dažnai plunksnos šersis?",
+  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[1]": "(Tikimybė, kad višta nusimes",
+  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[2]": "plunksnas per taktą yra 1/Iškritimo tikimybė)",
+  "modmenu.descriptionTranslation.chickensshed": "Viščiukai kartkartėmis nusimeta plunksnas."
+}

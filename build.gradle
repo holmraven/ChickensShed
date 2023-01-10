@@ -31,17 +31,9 @@ allprojects {
     version = rootProject.mod_version
     group = rootProject.maven_group
 
-    repositories {
-        maven {
-            url "https://cursemaven.com"
-            content {
-                includeGroup "curse.maven"
-            }
-        }
-    }
-
-    tasks.withType(JavaCompile) {
-        options.encoding = "UTF-8"
+    tasks.withType(JavaCompile).configureEach {
+        it.options.encoding = "UTF-8"
+        it.options.release = 17
     }
 
     java {
@@ -51,7 +43,7 @@ allprojects {
 
 forgix {
     group = "${rootProject.maven_group}.${rootProject.archives_base_name}"
-    mergedJarName = "${rootProject.archives_base_name}-${rootProject.mod_version}.jar"
+    mergedJarName = "${rootProject.archives_base_name}-${rootProject.archive_version}-${rootProject.mod_version}.jar"
     outputDir = "build/libs/Merged"
 }
 

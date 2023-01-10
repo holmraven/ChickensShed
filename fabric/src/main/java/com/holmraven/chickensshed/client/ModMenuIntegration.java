@@ -1,6 +1,7 @@
 package com.holmraven.chickensshed.client;
 
-import com.holmraven.chickensshed.config.ConfigHandler;
+import com.holmraven.chickensshed.config.ClothConfig;
+import com.holmraven.chickensshed.integration.CompatHandler;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.autoconfig.AutoConfig;
@@ -11,6 +12,9 @@ import net.fabricmc.api.Environment;
 public class ModMenuIntegration implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return parent -> AutoConfig.getConfigScreen(ConfigHandler.class, parent).get();
+        if (CompatHandler.cloth_config) {
+            return (parent -> AutoConfig.getConfigScreen(ClothConfig.class, parent).get());
+        }
+        return (screen -> null);
     }
 }

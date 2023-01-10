@@ -13,7 +13,7 @@
     "issues": "https://github.com/holmraven/ChickensShed/issues"
   },
   "license": "LGPL-3.0",
-  "icon": "logo.png",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -29,7 +29,10 @@
   "depends": {
     "fabricloader": ">=0.14.11",
     "minecraft": "~1.19",
-    "java": ">=17",
-    "cloth-config2": ">=8.2.88"
+    "java": ">=17"
+  },
+  "recommends": {
+    "cloth-config": "*",
+    "modmenu": "*"
   }
 }
