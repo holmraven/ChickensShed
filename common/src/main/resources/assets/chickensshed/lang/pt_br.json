@@ -1,7 +1,9 @@
 {
-    "text.autoconfig.chickensshed.title": "ChickensShed",
-    "text.autoconfig.chickensshed.option.chicksDropFeathers": "Pintinhos Soltam Penas",
-    "text.autoconfig.chickensshed.option.dropFrequency": "Queda de Frequência",
-    "text.autoconfig.chickensshed.option.chicksDropFeathers.@Tooltip": "Os pintinhos soltam penas?",
-    "text.autoconfig.chickensshed.option.dropFrequency.@Tooltip": "Com que frequência as penas irão cair?\n A chance de queda por tick é 1/Frequência de queda"
+  "text.autoconfig.chickensshed.title": "ChickensShed",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers": "Pintinhos Soltam Penas",
+  "text.autoconfig.chickensshed.option.dropFrequency": "Queda de Frequência",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers.@Tooltip": "Os pintinhos soltam penas?",
+  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[0]": "Com que frequência as penas irão cair?",
+  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[1]": "(A chance de queda por tick é",
+  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[2]": "1/Frequência de queda)"
 }
