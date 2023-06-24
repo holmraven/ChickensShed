@@ -11,7 +11,7 @@ public class ChickensShed {
         if (e.isBaby() && !ConfigHandler.chicksDropFeathers()) {
             return;
         }
-        if (!e.level.isClientSide && e.getRandom().nextInt(ConfigHandler.dropChance()) == 0) {
+        if (!e.level().isClientSide && e.getRandom().nextInt(ConfigHandler.dropChance()) == 0) {
             e.spawnAtLocation(Items.FEATHER);
         }
     }

@@ -1,5 +1,16 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+loom {
+    forge {
+        mixinConfig "chickensshed.mixins.json"
+    }
+}
+
+architectury {
+    platformSetupLoomIde()
+    forge()
 }
 
 configurations {
@@ -8,17 +19,6 @@ configurations {
     compileClasspath.extendsFrom common
     runtimeClasspath.extendsFrom common
     developmentForge.extendsFrom common
-}
-
-architectury {
-    platformSetupLoomIde()
-    forge()
-}
-
-loom {
-    forge {
-        mixinConfig "chickensshed.mixins.json"
-    }
 }
 
 dependencies {
@@ -30,28 +30,27 @@ dependencies {
 }
 
 processResources {
-    inputs.property "version", project.version
-
     filesMatching("META-INF/mods.toml") {
         expand "version": project.version
     }
+    inputs.property "version", project.version
 }
 
 shadowJar {
     exclude "fabric.mod.json"
 
     configurations = [project.configurations.shadowCommon]
-    classifier "dev-shadow"
+    archiveClassifier = "dev-shadow"
 }
 
 remapJar {
     inputFile.set(shadowJar.archiveFile)
     dependsOn(shadowJar)
-    classifier null
+    archiveClassifier = null
 }
 
 jar {
-    classifier "dev"
+    archiveClassifier = "dev"
 }
 
 sourcesJar {

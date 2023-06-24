@@ -1,9 +1,8 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
-    id "dev.architectury.loom" version "1.0-SNAPSHOT" apply false
-
+    id "dev.architectury.loom" version "1.2-SNAPSHOT" apply false
     id "io.github.pacifistmc.forgix" version "1.2.6"
-    id "io.github.p03w.machete" version "1.2.0"
+    id "io.github.p03w.machete" version "2.0.1"
 }
 
 architectury {
@@ -43,7 +42,7 @@ allprojects {
 
 forgix {
     group = "${rootProject.maven_group}.${rootProject.archives_base_name}"
-    mergedJarName = "${rootProject.archives_base_name}-${rootProject.archive_version}-${rootProject.mod_version}.jar"
+    mergedJarName = "${rootProject.archives_base_name}-${rootProject.mod_version}.jar"
     outputDir = "build/libs/Merged"
 }
 
