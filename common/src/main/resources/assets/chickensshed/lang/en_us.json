@@ -1,9 +1,13 @@
 {
   "text.autoconfig.chickensshed.title": "ChickensShed",
-  "text.autoconfig.chickensshed.option.chicksDropFeathers": "Chicks drop feathers",
-  "text.autoconfig.chickensshed.option.dropChance": "Drop chance",
-  "text.autoconfig.chickensshed.option.chicksDropFeathers.@Tooltip": "Do baby chickens drop feathers?",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers": "Chicks Drop Feathers",
+  "text.autoconfig.chickensshed.option.dropChance": "Drop Сhance",
+  "text.autoconfig.chickensshed.option.ao": "Advanced Options",
+  "text.autoconfig.chickensshed.option.ao.dropItem": "Drop Item",
+  "text.autoconfig.chickensshed.option.ao.mobList": "Mob List",
+  "text.autoconfig.chickensshed.option.chicksDropFeathers.@Tooltip": "Do baby mobs drop feathers?",
   "text.autoconfig.chickensshed.option.dropChance.@Tooltip[0]": "How often will feathers be shed?",
-  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[1]": "(Probability of chicken shedding",
-  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[2]": "feathers per tick is 1/Drop Chance)"
+  "text.autoconfig.chickensshed.option.dropChance.@Tooltip[1]": "(Probability is 1/Drop Сhance)",
+  "text.autoconfig.chickensshed.option.ao.dropItem.@Tooltip": "Which item configured mobs will drop?",
+  "text.autoconfig.chickensshed.option.ao.mobList.@Tooltip": "Which mobs will drop the configured item?"
 }
