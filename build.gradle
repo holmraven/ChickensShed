@@ -45,7 +45,3 @@ forgix {
     mergedJarName = "${rootProject.archives_base_name}-${rootProject.mod_version}.jar"
     outputDir = "build/libs/Merged"
 }
-
-machete {
-    additionalTasks.add("mergeJars")
-}
