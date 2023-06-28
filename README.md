@@ -8,7 +8,7 @@ The mod is very lightweight, serving its only function, making chickens drop fea
 ChickensShed allows you to configure:
 - If baby chickens will drop feathers;
 - How often will feathers be shed;
-- What item will be dropped;
+- Which item will be dropped;
 - Which mobs will drop the item.
 
 Both **Forge** and **Fabric**/**Quilt** versions are available in one download.
