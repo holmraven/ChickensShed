@@ -17,10 +17,10 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "com.holmraven.chickensshed.fabric.ChickensShedFabric"
+      "eu.holmr.chickensshed.fabric.ChickensShedFabric"
     ],
     "modmenu": [
-      "com.holmraven.chickensshed.client.ModMenuIntegration"
+      "eu.holmr.chickensshed.client.ModMenuIntegration"
     ]
   },
   "mixins": [

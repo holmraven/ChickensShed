@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "com.holmraven.chickensshed.mixins",
+  "package": "eu.holmr.chickensshed.mixins",
   "compatibilityLevel": "JAVA_17",
-  "plugin": "com.holmraven.chickensshed.integration.CompatMixinPlugin",
+  "plugin": "eu.holmr.chickensshed.integration.CompatMixinPlugin",
   "mixins": [
     "ChickenMixin",
     "SupplementariesCompatMixin"
