@@ -8,11 +8,11 @@
     "holmraven"
   ],
   "contact": {
-    "homepage": "https://www.curseforge.com/minecraft/mc-mods/chickensshed",
+    "homepage": "https://modrinth.com/mod/chickensshed",
     "sources": "https://github.com/holmraven/ChickensShed",
     "issues": "https://github.com/holmraven/ChickensShed/issues"
   },
-  "license": "LGPL-3.0",
+  "license": "LGPL-3.0-only",
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
@@ -27,8 +27,8 @@
     "chickensshed.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.21",
-    "minecraft": "~1.20",
+    "fabricloader": ">=0.14.23",
+    "minecraft": "~1.20.1",
     "java": ">=17"
   },
   "recommends": {
