@@ -1,16 +1,16 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "8.1.1"
+    id "com.github.johnrengelman.shadow" version "7.1.2"
+}
+
+architectury {
+    platformSetupLoomIde()
+    forge()
 }
 
 loom {
     forge {
         mixinConfig "chickensshed.mixins.json"
     }
-}
-
-architectury {
-    platformSetupLoomIde()
-    forge()
 }
 
 configurations {
@@ -22,18 +22,19 @@ configurations {
 }
 
 dependencies {
-    forge("net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge_version}")
+    forge "net.minecraftforge:forge:${rootProject.forge_version}"
     modApi("me.shedaniel.cloth:cloth-config-forge:${rootProject.cloth_config_version}")
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive false }
+    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 }
 
 processResources {
+    inputs.property "version", project.version
+
     filesMatching("META-INF/mods.toml") {
         expand "version": project.version
     }
-    inputs.property "version", project.version
 }
 
 shadowJar {
@@ -44,13 +45,8 @@ shadowJar {
 }
 
 remapJar {
-    inputFile.set(shadowJar.archiveFile)
-    dependsOn(shadowJar)
-    archiveClassifier = null
-}
-
-jar {
-    archiveClassifier = "dev"
+    input.set shadowJar.archiveFile
+    dependsOn shadowJar
 }
 
 sourcesJar {
@@ -62,5 +58,17 @@ sourcesJar {
 components.java {
     withVariantsFromConfiguration(project.configurations.shadowRuntimeElements) {
         skip()
+    }
+}
+
+publishing {
+    publications {
+        mavenForge(MavenPublication) {
+            artifactId = rootProject.archives_base_name + "-" + project.name
+            from components.java
+        }
+    }
+
+    repositories {
     }
 }
