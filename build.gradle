@@ -33,6 +33,7 @@ allprojects {
     group = rootProject.maven_group
 
     repositories {
+        maven { url "https://maven.neoforged.net/releases/" }
         maven { url "https://maven.terraformersmc.com/" }
     }
 
