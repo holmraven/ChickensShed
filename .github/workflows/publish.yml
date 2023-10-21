@@ -33,8 +33,8 @@ jobs:
           for file in fabric/build/libs/chickensshed-*.jar; do
             if [ -e "$file" ]; then
               if [[ "$file" != *"-dev.jar" && "$file" != *"-sources.jar" && "$file" != *"-javadoc.jar" && "$file" != *"-dev-shadow.jar" ]]; then
-                new_name="${file%-*}-fabric.jar"
-                mv "$file" "$new_name"
+                base_name=$(basename "$file" .jar)
+                mv "$file" "fabric/build/libs/${base_name}-fabric.jar"
               fi
             fi
           done
@@ -42,8 +42,8 @@ jobs:
           for file in forge/build/libs/chickensshed-*.jar; do
             if [ -e "$file" ]; then
               if [[ "$file" != *"-dev.jar" && "$file" != *"-sources.jar" && "$file" != *"-javadoc.jar" && "$file" != *"-dev-shadow.jar" ]]; then
-                new_name="${file%-*}-forge.jar"
-                mv "$file" "$new_name"
+                base_name=$(basename "$file" .jar)
+                mv "$file" "forge/build/libs/${base_name}-forge.jar"
               fi
             fi
           done
@@ -51,7 +51,7 @@ jobs:
       - name: Get Versions
         id: var
         run: |
-          MESSAGE=$(ls fabric/build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'chickensshed-|\\-fabric.jar' '{print $2}')
+          MESSAGE=$(grep "mod_version" gradle.properties | cut -d'=' -f2)
           echo mod_version=$MESSAGE >> $GITHUB_OUTPUT
           MESSAGE=$(grep "architectury_version" gradle.properties | cut -d'=' -f2)
           echo architectury_version=$MESSAGE >> $GITHUB_OUTPUT
