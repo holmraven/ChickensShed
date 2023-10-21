@@ -1,0 +1,123 @@
+name: Publish on CurseForge and Modrinth
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: "adopt"
+          java-version: 17
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build
+        uses: gradle/gradle-build-action@v2.4.2
+        with:
+          arguments: build
+
+      - name: Distinguish Fabric and Forge build artifacts
+        run: |
+          for file in fabric/build/libs/chickensshed-*.jar; do
+            if [ -e "$file" ]; then
+              new_name="${file%-*}-fabric.jar"
+              mv "$file" "$new_name"
+            fi
+          done
+
+          for file in forge/build/libs/chickensshed-*.jar; do
+            if [ -e "$file" ]; then
+              new_name="${file%-*}-forge.jar"
+              mv "$file" "$new_name"
+            fi
+          done
+
+      - name: Get Versions
+        id: var
+        run: |
+          MESSAGE=$(ls fabric/build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'chickensshed-|.jar' '{print $2}')
+          echo fabric_version=$MESSAGE >> $GITHUB_OUTPUT
+          MESSAGE=$(ls forge/build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'chickensshed-|.jar' '{print $2}')
+          echo forge_version=$MESSAGE >> $GITHUB_OUTPUT
+          MESSAGE=$(grep "architectury_version" gradle.properties | cut -d'=' -f2)
+          echo architectury_version=$MESSAGE >> $GITHUB_OUTPUT
+          MESSAGE=$(grep "cloth_config_version" gradle.properties | cut -d'=' -f2)
+          echo cloth_version=$MESSAGE >> $GITHUB_OUTPUT
+
+      - name: Publish (Fabric/Quilt)
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: cRJuLZ2D
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          curseforge-id: 282684
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          files: |
+            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+
+          name: ChickensShed ${{ steps.var.outputs.fabric_version }}
+          version: ${{ steps.var.outputs.fabric_version }}
+          version-type: release
+          changelog-file: CHANGELOG.md
+
+          loaders: |
+            fabric
+            quilt
+          game-versions: |
+            ${{ github.ref_name }}
+          game-version-filter: none
+          dependencies: |
+            architectury-api@${{ steps.var.outputs.architectury_version }}+fabric(required){modrinth:lhGA9TYQ}{curseforge:419699}
+            cloth-config@${{ steps.var.outputs.cloth_version }}+fabric(optional){modrinth:9s6osm5g}{curseforge:348521}
+          java: |
+            17
+
+          retry-attempts: 2
+          retry-delay: 10000
+          fail-mode: fail
+
+      - name: Publish ((Neo)Forge)
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: cRJuLZ2D
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          curseforge-id: 282684
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          files: |
+            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+
+          name: ChickensShed ${{ steps.var.outputs.fabric_version }}
+          version: ${{ steps.var.outputs.forge_version }}
+          version-type: release
+          changelog-file: CHANGELOG.md
+
+          loaders: |
+            forge
+            neoforge
+          game-versions: |
+            ${{ github.ref_name }}
+          game-version-filter: none
+          dependencies: |
+            architectury-api@${{ steps.var.outputs.architectury_version }}+forge(required){modrinth:lhGA9TYQ}{curseforge:419699}
+            cloth-config@${{ steps.var.outputs.cloth_version }}+forge(optional){modrinth:9s6osm5g}{curseforge:348521}
+          java: |
+            17
+
+          retry-attempts: 2
+          retry-delay: 10000
+          fail-mode: fail

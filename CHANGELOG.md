@@ -1,5 +1,3 @@
-## 1.5.0
-
 * Fabric/Quilt and (Neo)Forge are now two separate downloads for better compatibility.
 * Prepared to move from LexForge to NeoForge entirely on next minor release.
 * Depending on Architectury API instead of mixins now for better compatibility.
