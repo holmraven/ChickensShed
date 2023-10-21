@@ -5,7 +5,7 @@
 
 ChickensShed primarily makes chickens drop feathers occasionally, allowing players to obtain feathers without killing them. The mod also allows players to change the feather drop to an item of their choice and configure which mobs will drop it.
 
-Both **Forge** and **Fabric**/**Quilt** versions are available.
+Both **(Neo)Forge** and **Fabric**/**Quilt** versions are available.
 
 ## ⚙️ Configuration
 
