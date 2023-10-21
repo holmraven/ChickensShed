@@ -47,10 +47,8 @@ jobs:
       - name: Get Versions
         id: var
         run: |
-          MESSAGE=$(ls fabric/build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'chickensshed-|.jar' '{print $2}')
-          echo fabric_version=$MESSAGE >> $GITHUB_OUTPUT
-          MESSAGE=$(ls forge/build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'chickensshed-|.jar' '{print $2}')
-          echo forge_version=$MESSAGE >> $GITHUB_OUTPUT
+          MESSAGE=$(ls fabric/build/libs/* | grep sources.jar -v | grep shadow.jar -v | awk -F 'chickensshed-|\\-fabric.jar' '{print $2}')
+          echo mod_version=$MESSAGE >> $GITHUB_OUTPUT
           MESSAGE=$(grep "architectury_version" gradle.properties | cut -d'=' -f2)
           echo architectury_version=$MESSAGE >> $GITHUB_OUTPUT
           MESSAGE=$(grep "cloth_config_version" gradle.properties | cut -d'=' -f2)
@@ -70,8 +68,8 @@ jobs:
           files: |
             fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
 
-          name: ChickensShed ${{ steps.var.outputs.fabric_version }}
-          version: ${{ steps.var.outputs.fabric_version }}
+          name: Fabric/Quilt ${{ steps.var.outputs.mod_version }}
+          version: ${{ steps.var.outputs.mod_version }}-forge
           version-type: release
           changelog-file: CHANGELOG.md
 
@@ -105,8 +103,8 @@ jobs:
           files: |
             forge/build/libs/!(*-@(dev|sources|javadoc)).jar
 
-          name: ChickensShed ${{ steps.var.outputs.fabric_version }}
-          version: ${{ steps.var.outputs.forge_version }}
+          name: (Neo)Forge ${{ steps.var.outputs.mod_version }}
+          version: ${{ steps.var.outputs.mod_version }}-forge
           version-type: release
           changelog-file: CHANGELOG.md
 
