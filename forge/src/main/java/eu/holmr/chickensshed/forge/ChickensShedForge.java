@@ -11,6 +11,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(ChickensShed.MODID)
 public class ChickensShedForge {
     public ChickensShedForge(){
+        ChickensShed.init();
         if (CompatHandler.cloth_config) {
             FMLJavaModLoadingContext.get().getModEventBus().addListener(this::onClientSetup);
             ConfigHandler.initClothConfig();
