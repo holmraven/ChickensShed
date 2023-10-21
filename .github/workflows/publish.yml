@@ -32,15 +32,19 @@ jobs:
         run: |
           for file in fabric/build/libs/chickensshed-*.jar; do
             if [ -e "$file" ]; then
-              new_name="${file%-*}-fabric.jar"
-              mv "$file" "$new_name"
+              if [[ "$file" != *"-dev.jar" && "$file" != *"-sources.jar" && "$file" != *"-javadoc.jar" && "$file" != *"-dev-shadow.jar" ]]; then
+                new_name="${file%-*}-fabric.jar"
+                mv "$file" "$new_name"
+              fi
             fi
           done
 
           for file in forge/build/libs/chickensshed-*.jar; do
             if [ -e "$file" ]; then
-              new_name="${file%-*}-forge.jar"
-              mv "$file" "$new_name"
+              if [[ "$file" != *"-dev.jar" && "$file" != *"-sources.jar" && "$file" != *"-javadoc.jar" && "$file" != *"-dev-shadow.jar" ]]; then
+                new_name="${file%-*}-forge.jar"
+                mv "$file" "$new_name"
+              fi
             fi
           done
 
@@ -66,7 +70,7 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: |
-            fabric/build/libs/!(*-@(dev|sources|javadoc)).jar
+            fabric/build/libs/!(*-@(dev|sources|javadoc|dev-shadow)).jar
 
           name: Fabric/Quilt ${{ steps.var.outputs.mod_version }}
           version: ${{ steps.var.outputs.mod_version }}-forge
@@ -101,7 +105,7 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: |
-            forge/build/libs/!(*-@(dev|sources|javadoc)).jar
+            forge/build/libs/!(*-@(dev|sources|javadoc|dev-shadow)).jar
 
           name: (Neo)Forge ${{ steps.var.outputs.mod_version }}
           version: ${{ steps.var.outputs.mod_version }}-forge
