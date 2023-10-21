@@ -25,6 +25,12 @@ description='''Chickens shed their feathers occasionally.'''
     ordering="NONE"
     side="BOTH"
 [[dependencies.chickensshed]]
+    modId="architectury"
+    mandatory=true
+    versionRange="[9,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.chickensshed]]
     modId="cloth_config"
     mandatory=false
     versionRange="[11,)"
