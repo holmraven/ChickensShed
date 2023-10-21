@@ -73,7 +73,7 @@ jobs:
             fabric/build/libs/!(*-@(dev|sources|javadoc|dev-shadow)).jar
 
           name: Fabric/Quilt ${{ steps.var.outputs.mod_version }}
-          version: ${{ steps.var.outputs.mod_version }}-forge
+          version: ${{ steps.var.outputs.mod_version }}-fabric
           version-type: release
           changelog-file: CHANGELOG.md
 
