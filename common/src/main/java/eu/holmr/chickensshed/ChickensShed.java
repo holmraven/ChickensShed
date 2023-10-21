@@ -27,7 +27,7 @@ public class ChickensShed {
             return;
         }
         if (!entity.level().isClientSide && entity.getRandom().nextInt(ConfigHandler.dropChance()) == 0) {
-            entity.spawnAtLocation(BuiltInRegistries.ITEM.get(new ResourceLocation(ConfigHandler.dropItem())));
+            entity.spawnAtLocation(BuiltInRegistries.ITEM.get(new ResourceLocation(ConfigHandler.droppedItem())));
         }
     }
 }

@@ -18,14 +18,9 @@ public class ClothConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(min = 6000, max = 108000)
     public int dropChance = ConfigHandler.dropChanceDefault;
 
-    @ConfigEntry.Gui.CollapsibleObject
-    AdvancedOptions ao = new AdvancedOptions();
+    @ConfigEntry.Gui.Tooltip
+    public String droppedItem = ConfigHandler.droppedItemDefault;
 
-    static class AdvancedOptions {
-        @ConfigEntry.Gui.Tooltip
-        public String dropItem = ConfigHandler.dropItemDefault;
-
-        @ConfigEntry.Gui.Tooltip
-        public List<String> mobList = ConfigHandler.mobListDefault;
-    }
+    @ConfigEntry.Gui.Tooltip
+    public List<String> mobList = ConfigHandler.mobListDefault;
 }

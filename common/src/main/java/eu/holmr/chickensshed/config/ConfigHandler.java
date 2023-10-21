@@ -12,7 +12,7 @@ public class ConfigHandler {
 
     public static boolean chicksDropFeathersDefault = true;
     public static int dropChanceDefault = 26000;
-    public static String dropItemDefault = "minecraft:feather";
+    public static String droppedItemDefault = "minecraft:feather";
     public static List<String> mobListDefault = Arrays.asList("minecraft:chicken");
 
     public static void initClothConfig()
@@ -35,16 +35,16 @@ public class ConfigHandler {
         return dropChanceDefault;
     }
 
-    public static String dropItem() {
+    public static String droppedItem() {
         if (CompatHandler.cloth_config) {
-            return CONFIG.ao.dropItem;
+            return CONFIG.droppedItem;
         }
-        return dropItemDefault;
+        return droppedItemDefault;
     }
 
     public static List<String> mobList() {
         if (CompatHandler.cloth_config) {
-            return CONFIG.ao.mobList;
+            return CONFIG.mobList;
         }
         return mobListDefault;
     }
